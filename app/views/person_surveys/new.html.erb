@@ -1,0 +1,180 @@
+<div class="signup-survey-container">
+
+<% provide(:title, 'Create a Personality Profile') %>
+<h1 class="page-title">create a personality profile</h1>
+
+<%= form_for(@person_survey) do |f| %>
+
+<% if @person_survey.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-error">
+      <ul>
+      <% @person_survey.errors.full_messages.each do |msg| %>
+        <li>* <%= msg %></li>
+      <% end %>
+      </ul>
+
+    </div>
+  </div>
+<% end %>
+
+<script>
+$(function() {
+    $( "#person_survey_birthday" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+	  yearRange: "1913:2013",
+	  dateFormat: "yy-mm-dd"
+    });
+  });
+</script>
+
+  
+
+  <%= f.label :gender %>
+  <%= f.select :gender, ["male","female","other"] %>
+  
+  <%= f.label :language, "Primary Language" %>
+  <%= f.text_field :language %>
+		
+  <%= f.label :birthday %>
+  <%= f.text_field :birthday %>
+
+		<script>
+	
+	$(function() {
+    $( "#world_slider" ).slider({
+      value:5,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $('#people_score').value = ui.value;
+      }
+    });
+	});
+	$(function() {
+    $( "#information_slider" ).slider({
+      value:5,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $('#infoprocessing_score').value = ui.value;
+      }
+    });
+	});
+	$(function() {
+    $( "#decisions_slider" ).slider({
+      value:5,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $('#decisionmaking_score').value = ui.value;
+      }
+    });
+	});
+	$(function() {
+    $( "#structure_slider" ).slider({
+      value:5,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $('#structure_score').value = ui.value;
+      }
+    });
+	});
+	
+	$(function() {
+    $( "#interests" ).sortable({
+      placeholder: "ui-state-highlight", stop: handleStopEvent
+    });
+    $( "#interests" ).disableSelection();
+  });
+  
+  var sortedIDs = [];
+  
+  function handleStopEvent( event, ui ) {
+	sortedIDs = $( "#interests" ).sortable( "toArray" );
+	$('#outdoor_interest').value = sortedIDs.indexOf("outdoor_interest_drag")+1;
+	$('#fitness_interest').value = sortedIDs.indexOf("fitness_interest_drag")+1;
+	$('#stem_interest').value = sortedIDs.indexOf("stem_interest_drag")+1;
+	$('#siteseeing_interest').value = sortedIDs.indexOf("siteseeing_interest_drag")+1;
+	$('#politics_interest').value = sortedIDs.indexOf("politics_interest_drag")+1;
+	$('#food_interest').value = sortedIDs.indexOf("food_interest_drag")+1;
+	$('#art_interest').value = sortedIDs.indexOf("art_interest_drag")+1;
+	$('#music_interest').value = sortedIDs.indexOf("music_interest_drag")+1;
+	$('#film_interest').value = sortedIDs.indexOf("film_interest_drag")+1;
+	$('#game_interest').value = sortedIDs.indexOf("game_interest_drag")+1;
+}
+  
+</script>
+
+<label>Please respond to the following questions by dragging the slider to where you feel is most appropriate</label>
+
+<label>Do you prefer to focus on:</label>
+<div class="row-fluid">
+	<div class="span2">The outer world</div>
+	<div class="span8"><div id="world_slider"></div></div>
+	<div class="span2">Your own inner world</div>
+</div>
+<br>
+<label>Do you prefer to:</label>
+<div class="row-fluid">
+	<div class="span2">Focus on the basic information you take in</div>
+	<div class="span8"><div id="information_slider"></div></div>
+	<div class="span2">Interpret and add meaning</div>
+</div>
+<br>
+<label>When making decisions, do you prefer to first look at:</label>
+<div class="row-fluid">
+	<div class="span2">Logic and consistency</div>
+	<div class="span8"><div id="decisions_slider"></div></div>
+	<div class="span2">The people and special circumstances</div>
+</div>
+<br>
+<label>In dealing with the outside world, do you prefer to:</label>
+<div class="row-fluid">
+	<div class="span2">Get things decided</div>
+	<div class="span8"><div id="structure_slider"></div></div>
+	<div class="span2">Stay open to new information and options</div>
+</div>
+<br>
+
+<label>Rank these interests by dragging them in the order of your most preferred to least preferred:</label>
+<ul id="interests">
+  <li class="ui-state-default" id="outdoor_interest_drag">Outdoors</li>
+  <li class="ui-state-default" id="fitness_interest_drag">Fitness and Sports</li>
+  <li class="ui-state-default" id="stem_interest_drag">Sciences</li>
+  <li class="ui-state-default" id="siteseeing_interest_drag">Siteseeing</li>
+  <li class="ui-state-default" id="politics_interest_drag">Politics</li>
+  <li class="ui-state-default" id="food_interest_drag">Food</li>
+  <li class="ui-state-default" id="art_interest_drag">Art</li>
+  <li class="ui-state-default" id="music_interest_drag">Music and Dancing</li>
+  <li class="ui-state-default" id="film_interest_drag">Movies</li>
+  <li class="ui-state-default" id="game_interest_drag">Card and Board Games</li>
+</ul>
+
+<%= f.hidden_field :outdoor_interest, value: "1" %>
+<%= f.hidden_field :fitness_interest, value: "2" %>
+<%= f.hidden_field :stem_interest, value: "3" %>
+<%= f.hidden_field :siteseeing_interest, value: "4" %>
+<%= f.hidden_field :politics_interest, value: "5" %>
+<%= f.hidden_field :food_interest, value: "6" %>
+<%= f.hidden_field :art_interest, value: "7" %>
+<%= f.hidden_field :music_interest, value: "8" %>
+<%= f.hidden_field :film_interest, value: "9" %>
+<%= f.hidden_field :game_interest, value: "10" %>
+
+<%= f.hidden_field :people_score, value: "5" %>
+<%= f.hidden_field :infoprocessing_score, value: "5" %>
+<%= f.hidden_field :decisionmaking_score, value: "5" %>
+<%= f.hidden_field :structure_score, value: "5" %>
+	
+  <br><br>
+  <%= f.submit "Save personality profile", class: "btn btn-standout" %>
+<% end %>
+
+</div>

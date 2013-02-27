@@ -1,0 +1,124 @@
+body {
+	background:url('../img/beach-bg.jpg');
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+.nav li {
+	font-weight:bold;
+	padding: 25px 0 0 10px;
+}
+
+.navbar .btn-signin {
+	margin: 27px 0 0 0;
+	float:right;
+}
+
+.btn-joinnow {
+	margin: 15px 0 0 0;
+	padding: 35px 35px;
+  font-size: 40px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.btn-standout {
+  color: #eaf1fa;
+  font-weight:bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #fc9c50;
+  background-image: -moz-linear-gradient(top, #fcad6e, #fb8223);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fcad6e), to(#fb8223));
+  background-image: -webkit-linear-gradient(top, #fcad6e, #fb8223);
+  background-image: -o-linear-gradient(top, #fcad6e, #fb8223);
+  background-image: linear-gradient(to bottom, #fcad6e, #fb8223);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcad6e', endColorstr='#fffb8223', GradientType=0);
+  border-color: #fb8223 #fb8223 #ce5d04;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #fb8223;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+
+.btn-standout:hover,
+.btn-standout:active,
+.btn-standout.active,
+.btn-standout.disabled,
+.btn-standout[disabled] {
+  color: #eaf1fa;
+  background-color: #fb8223;
+  *background-color: #fb740a;
+}
+.btn-standout:active,
+.btn-standout.active {
+  background-color: #e76804 \9;
+}
+
+.body-background {
+	text-align:center;
+	background-color: rgba(171, 199, 235, 0.5);
+  background-image: -moz-linear-gradient(top, rgba(171, 199, 235, 0.3), rgba(171, 199, 235, 0.5));
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(171, 199, 235, 0.3)), to(rgba(171, 199, 235, 0.5)));
+  background-image: -webkit-linear-gradient(top, rgba(171, 199, 235, 0.3), rgba(171, 199, 235, 0.5));
+  background-image: -o-linear-gradient(top, rgba(171, 199, 235, 0.3), rgba(171, 199, 235, 0.5));
+  background-image: linear-gradient(to bottom, rgba(171, 199, 235, 0.3), rgba(171, 199, 235, 0.5));
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+}
+
+.home-body-container {
+	padding: 0 0 40px 0;
+}
+
+.full-height {
+	height:100%;
+}
+
+.partial-height {
+	height:80%;
+}
+
+.home-title {
+	font-size:100px;
+	line-height: 120px;
+	color: #1a539b;
+}
+
+.one-liner {
+	font-weight:normal;
+	color:#317dd2;
+	font-size: 30px;
+	line-height: 65px;
+}
+
+.home-thumbnail {
+	margin: 30px 0 0 0;
+	color: #1a539b;
+	font-size: 18px;
+}
+
+.thumbnail-caption {
+	width:218px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.btn-standout .caret {
+  border-top: 4px solid #eaf1fa;
+}
+
+.btn-group.open .btn-standout.dropdown-toggle {
+  background-color: #fb8223;
+}
+
+ul.signin-form {
+	background-color:#eaf1fa;
+}
+
+form.signin-form {
+	margin: 0 0 5px 0;
+}

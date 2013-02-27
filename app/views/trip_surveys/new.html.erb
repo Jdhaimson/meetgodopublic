@@ -1,0 +1,61 @@
+<div class="trip-survey-container">
+<% provide(:title, 'Trip Survey') %>
+<h1 class="page-title">your trip survey</h1>
+
+<%= form_for(@trip_survey) do |f| %>
+
+  <%= f.label :goal, "Main trip goal, to be displayed:" %>
+  <%= f.text_area :goal, rows: "3" %>
+
+  <%= f.label :top_interest1, "Top interests for this trip, to be displayed:" %>
+  <%= f.text_field :top_interest1 %>
+  
+  <%= f.text_field :top_interest2 %>
+  
+  <%= f.text_field :top_interest3 %>
+  
+  <script>
+  $(function() {
+    $( "#interests" ).sortable({
+      placeholder: "ui-state-highlight", stop: handleStopEvent
+    });
+    $( "#interests" ).disableSelection();
+  });
+  
+  var sortedIDs = [];
+  
+  function handleStopEvent( event, ui ) {
+	sortedIDs = $( "#interests" ).sortable( "toArray" );
+	$('#relaxing_interest').value = sortedIDs.indexOf("relaxing_interest_drag")+1;
+	$('#sightseeing_interest').value = sortedIDs.indexOf("sightseeing_interest_drag")+1;
+	$('#fitness_interest').value = sortedIDs.indexOf("fitness_interest_drag")+1;
+	$('#food_interest').value = sortedIDs.indexOf("food_interest_drag")+1;
+	$('#meetingpeople_interest').value = sortedIDs.indexOf("meetingpeople_interest_drag")+1;
+	$('#adventuring_interest').value = sortedIDs.indexOf("adventuring_interest_drag")+1;
+	$('#games_interest').value = sortedIDs.indexOf("games_interest_drag")+1;
+  }
+  </script>
+  
+  <label>Rank these in order of what you are most interested in on this trip, in order of most preferred to least preferred:</label>
+  <ul id="interests">
+    <li class="ui-state-default" id="relaxing_interest_drag">Relaxing</li>
+    <li class="ui-state-default" id="sightseeing_interest_drag">Siteseeing</li>
+    <li class="ui-state-default" id="fitness_interest_drag">Fitness</li>
+    <li class="ui-state-default" id="food_interest_drag">Food</li>
+    <li class="ui-state-default" id="meetingpeople_interest_drag">Meeting People</li>
+    <li class="ui-state-default" id="adventuring_interest_drag">Adventuring</li>
+    <li class="ui-state-default" id="games_interest_drag">Games</li>
+  </ul>
+  <%= f.hidden_field :relaxing_interest, value:"1" %>
+  <%= f.hidden_field :sightseeing_interest, value:"2" %>
+  <%= f.hidden_field :fitness_interest, value:"3" %>
+  <%= f.hidden_field :food_interest, value:"4" %>
+  <%= f.hidden_field :meetingpeople_interest, value:"5" %>
+  <%= f.hidden_field :adventuring_interest, value:"6" %>
+  <%= f.hidden_field :games_interest, value:"7" %>
+
+  <br><br>
+  <%= f.submit "Save trip survey", class: "btn btn-standout" %>
+<% end %>
+
+</div>

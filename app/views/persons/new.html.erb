@@ -1,0 +1,133 @@
+<div class="person-signup-container">
+
+<% provide(:title, 'Create a Personality Profile') %>
+<h1 class="page-title">Sign up</h1>
+
+<%= form_for(@person_survey) do |f| %>
+  
+  <script>
+$(function() {
+    $( "#person_birthday" ).datepicker();
+	$( "#person" ).datepicker();
+  });
+</script>
+
+  <%= f.label :birthday %>
+  <%= f.text_field :birthday %>
+
+  <%= f.label :gender %>
+  <%= f.select :gender, ["male","female","other"] %>
+  
+  <%= f.label :language %>
+  <%= f.text_field :language %>
+		
+	<%= f.label :profession %>
+    <%= f.text_field :profession %>
+
+		<script>
+	var world_amount=5;
+	var information_amount=5;
+	var decisions_amount=5;
+	var structure_amount=5;
+	
+	$(function() {
+    $( "#world_slider" ).slider({
+      value:5,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        var world_amount = ui.value;
+      }
+    });
+	});
+	$(function() {
+    $( "#information_slider" ).slider({
+      value:5,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        var information_amount = ui.value;
+      }
+    });
+	});
+	$(function() {
+    $( "#decisions_slider" ).slider({
+      value:5,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        var decisions_amount = ui.value;
+      }
+    });
+	});
+	$(function() {
+    $( "#structure_slider" ).slider({
+      value:5,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        var structure_amount = ui.value;
+      }
+    });
+	});
+	
+	$(function() {
+    $( "#interests" ).sortable({
+      placeholder: "ui-state-highlight"
+    });
+    $( "#interests" ).disableSelection();
+  });
+  </script>
+
+  <label>Do you prefer to focus on:</label>
+<div class="row-fluid">
+	<div class="span2">The outer world</div>
+	<div class="span8"><div id="world_slider"></div></div>
+	<div class="span2">Your own inner world</div>
+</div>
+<br>
+<label>Do you prefer to:</label>
+<div class="row-fluid">
+	<div class="span2">Focus on the basic information you take in</div>
+	<div class="span8"><div id="information_slider"></div></div>
+	<div class="span2">Interpret and add meaning</div>
+</div>
+<br>
+<label>When making decisions, do you prefer to first look at:</label>
+<div class="row-fluid">
+	<div class="span2">Logic and consistency</div>
+	<div class="span8"><div id="decisions_slider"></div></div>
+	<div class="span2">The people and special circumstances</div>
+</div>
+<br>
+<label>In dealing with the outside world, do you prefer to:</label>
+<div class="row-fluid">
+	<div class="span2">Get things decided</div>
+	<div class="span8"><div id="structure_slider"></div></div>
+	<div class="span2">Stay open to new information and options</div>
+</div>
+<br>
+
+<label>Rank these interests in order of your most preferred to least preferred:</label>
+<ul id="interests">
+  <li class="ui-state-default">Outdoors</li>
+  <li class="ui-state-default">Fitness and Sports</li>
+  <li class="ui-state-default">Sciences</li>
+  <li class="ui-state-default">Sight-seeing</li>
+  <li class="ui-state-default">Politics</li>
+  <li class="ui-state-default">Food</li>
+  <li class="ui-state-default">Art</li>
+  <li class="ui-state-default">Music and Dancing</li>
+  <li class="ui-state-default">Movies</li>
+  <li class="ui-state-default">Card and Board Games</li>
+</ul>
+	
+  <br><br>
+  <%= f.submit "Save Personality Profile", class: "btn btn-standout" %>
+<% end %>
+
+</div>

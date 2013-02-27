@@ -1,0 +1,2 @@
+module TripCodesHelper
+end

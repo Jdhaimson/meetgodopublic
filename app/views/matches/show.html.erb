@@ -1,0 +1,113 @@
+
+<script type="text/javascript">
+
+$( init );
+ 
+function init() {
+<% @people.each do |person| %>
+  $('#'+<%= person.id %>).draggable( { handle: "i", cursor: "move", containment: "#draganddrop-applet", revert:false } );
+<% end %>
+
+  $('.slot').droppable( { drop: handleDropEvent, over: handleOverEvent } );
+}
+var groupString = "";
+function handleDropEvent( event, ui ) {
+var class_name = $(this).attr('class');
+  if (class_name.indexOf("full")!=-1) {
+	ui.draggable.draggable('option', 'revert', true);
+  } else if (class_name.indexOf("empty")!=-1) {
+	ui.draggable.draggable('option', 'revert', false);
+	$(this).attr("class", "slot full ui-droppable");
+	ui.draggable.attr('style', 'position: relative').appendTo($(this));
+	$('.original').html('');
+  }
+  $('.slot').removeClass('rolledOver');
+  $('.slot').removeClass('original');
+  groupString = "";
+  $('#new-group > .full > span').each(function() {
+    groupString += $(this).attr("id");
+    groupString += ",";
+  });
+  group.value = groupString.substring(0, groupString.length-1);
+}
+
+function handleOverEvent( event, ui) {
+
+	$(this).addClass('rolledOver');
+	if ($('.rolledOver').length==1) {
+		$(this).attr("class", "slot empty ui-droppable rolledOver original");
+	}
+}
+
+</script>
+
+<div class="row-fluid">
+  <div class="span1"></div>
+  <div class="span10 draganddrop-container" id="draganddrop-applet">
+    <div class="span6 left-container" id="original-group">
+      <h2 class="group-label">My Group</h2>
+
+      <% @people.each do |person| %>
+        <div class="slot full">
+          <span id=<%= person.id %> class="name-card ui-draggable"><i class="icon-th icon-white draggy"></i><%= person.name %></span>
+        </div>
+      <% end %>
+    </div>
+    <div class="span6 right-container" id="new-group">
+      <h2 class="group-label">Find Matches For</h2>
+      <% @people.each do |person| %>      
+        <div class="slot empty"></div>
+      <% end %>
+
+     </div>
+   </div>
+</div>
+<div class="row-fluid">
+<div class="span12">
+<%= form_for(@match) do |f| %>
+  <%= hidden_field_tag(:group, "") %>
+  <%= f.submit "find matches", class:"btn btn-standout", style:"margin-bottom:15px" %>
+<% end %>
+</div>
+</div>
+<% if !@matches.nil? %>
+<% count1 = 0 %>
+<script>
+var groupArray = groupString.split(',');
+</script>
+<% @matches.each do |person| %>
+<div class="row-fluid">
+  <div class="span1"></div>
+  <div class="span10"><h2 class="subtitle" id="nameHeader"></h2></div>
+  <script>
+  $('#nameHeader').innerHTML = groupArray[<%= count1 %>]
+  </script>
+  <% count1 += 1 %>
+</div>
+<div class="row-fluid">
+  <div class="span1"></div>
+  <div class="span10 match-row">
+    <div class="matches">			
+      
+      <% person.each do |match| %>
+    	<div class="matched-person">
+    	  <div class="match-percentage">
+            <h1 class="percentage-heading"><%= (match[1]*100).round %>%</h1>
+          </div>
+		  <%= image_tag("logo.png", class:"profile-picture") %>
+    	  <div class="potential-match-partial">
+    	    <h2 class="potential-match-name"><%= match[0].name %><%= link_to image_tag("message_icon.png", style:"margin:0 0 6px 7px"), "mailto:"+match[7] %></h2>
+    	    <p class="potential-match-info">
+    	      <b>Age: </b><%= (match[2]/60/60/24/365).to_int %><br>
+    	      <b>Interests: </b><%= match[4] %>, <%= match[5] %>, <%= match[6] %><br>
+    	      <b>Vacation Goal: </b><%= match[3] %><br>
+    	    </p>
+    	  </div>
+ 	    </div>
+      <% end %>	
+    </div>
+  </div>
+</div>
+<% end %>
+
+<% end %>

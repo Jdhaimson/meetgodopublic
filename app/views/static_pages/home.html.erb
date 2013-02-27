@@ -1,0 +1,22 @@
+<% provide(:title, 'discover friends with the same vacation plans') %>
+<div class="container-fluid home-body-container full-height">
+  <h1 class="home-title">meet. go. do.</h1>
+  <h2 class="one-liner">discover friends with the same vacation plans</h2>
+  <%= button_to "join now", signup_path, class: "btn btn-standout btn-joinnow", method: "get" %>
+  <div class="row-fluid">
+    <div class="span4 home-thumbnail">
+      <%=image_tag("rsz_happy-family.jpg", height:"400", width:"218", alt:"meet.", class:"pull-right") %>
+      <p class="thumbnail-caption pull-right"><font style="font-weight:bold; size:20px">Meet</font> new friends who will be traveling with you</p>
+    </div>
+    <div class="span4 home-thumbnail">
+      <%=image_tag("rsz_cruisecarnival.jpg", height:"400", width:"218", alt:"go.")%>
+      <p class="thumbnail-caption"><font style="font-weight:bold; size:20px">Go</font> on vacation to exotic destinations</p>
+    </div>
+    <div class="span4 home-thumbnail">
+      <%=image_tag("rsz_kids-in-pool.jpg", height:"400", width:"218", alt:"do.", class:"pull-left") %>
+
+      <p class="thumbnail-caption pull-left"><font style="font-weight:bold; size:20px">Do</font> exciting activities with your new friends</p>
+    </div>
+  </div>
+</div>
+

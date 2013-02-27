@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+class Match
+  attr_reader :group
+
+  def self.find_matches(group = [])
+    group_size = group.length
+    
+  end
+
+  def initialize(group = {})
+    @group = group
+  end
+
+=======
+
+class Match
+  attr_reader :group
+>>>>>>> 1d0add1be348a0d4f1f4c97cd60bdfc48718fe7a
+end

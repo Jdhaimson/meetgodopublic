@@ -1,0 +1,13 @@
+class MatchesController < ApplicationController
+  def show
+<<<<<<< HEAD
+    @trip = Trip.find(session[:trip_id])
+    @people = @trip.people
+    if(!params[:group].nil?)
+      @matches = Match.find_matches(params[:group])
+    end
+=======
+
+>>>>>>> 1d0add1be348a0d4f1f4c97cd60bdfc48718fe7a
+  end
+end

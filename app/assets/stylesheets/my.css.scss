@@ -1,0 +1,410 @@
+body {
+	background:url('beach-bg.jpg');
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+.nav li {
+	font-weight:bold;
+	padding: 25px 0 0 10px;
+}
+
+.navbar .btn-signin {
+	margin: 27px 0 0 0;
+	float:right;
+}
+
+.btn-joinnow {
+	margin: 15px 0 0 0;
+	padding: 35px 35px;
+  font-size: 40px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.btn-standout {
+  color: #eaf1fa;
+  font-weight:bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #fc9c50;
+  background-image: -moz-linear-gradient(top, #fcad6e, #fb8223);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fcad6e), to(#fb8223));
+  background-image: -webkit-linear-gradient(top, #fcad6e, #fb8223);
+  background-image: -o-linear-gradient(top, #fcad6e, #fb8223);
+  background-image: linear-gradient(to bottom, #fcad6e, #fb8223);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcad6e', endColorstr='#fffb8223', GradientType=0);
+  border-color: #fb8223 #fb8223 #ce5d04;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #fb8223;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+
+.btn-standout:hover,
+.btn-standout:active,
+.btn-standout.active,
+.btn-standout.disabled,
+.btn-standout[disabled] {
+  color: #eaf1fa;
+  background-color: #fb8223;
+  *background-color: #fb740a;
+}
+.btn-standout:active,
+.btn-standout.active {
+  background-color: #e76804 \9;
+}
+
+.body-background {
+	text-align:center;
+	background-color: rgba(238,244,251,0.5);
+background-image: -moz-linear-gradient(top, rgba(238,244,251,0.3), rgba(238,244,251,0.5));
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(238,244,251,0.3)), to(rgba(238,244,251,0.5)));
+background-image: -webkit-linear-gradient(top, rgba(238,244,251,0.3), rgba(238,244,251,0.5));
+background-image: -o-linear-gradient(top, rgba(238,244,251,0.3), rgba(238,244,251,0.5));
+background-image: linear-gradient(to bottom, rgba(238,244,251,0.3), rgba(238,244,251,0.5));
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+padding:7% 10px 0 10px;
+}
+
+.home-body-container {
+	padding-bottom: 12%;
+}
+
+.show-trip-container {
+	padding-bottom: 35%;
+}
+
+.show-user-container {
+	padding-bottom: 37%;
+}
+
+.display-vacation-container {
+	padding-bottom: 30%;
+}
+
+.full-height {
+	height:100%;
+	min-height:100%;
+}
+
+.partial-height {
+	min-height:90%;
+}
+
+.home-title {
+	font-size:100px;
+	line-height: 140px;
+	color: #1a539b;
+}
+
+.one-liner {
+	font-weight:normal;
+	color:#317dd2;
+	font-size: 30px;
+	line-height: 65px;
+}
+
+.home-thumbnail {
+	margin: 30px 0 0 0;
+	color: #1a539b;
+	font-size: 18px;
+}
+
+.thumbnail-caption {
+	width:218px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.btn-standout .caret {
+  border-top: 4px solid #eaf1fa;
+}
+
+.btn-group.open .btn-standout.dropdown-toggle {
+  background-color: #fb8223;
+}
+
+ul.signin-form {
+	background-color:#eaf1fa;
+}
+
+form.signin-form {
+	margin: 3px 5px 3px 5px;
+}
+
+.draganddrop-container {
+	border: 2px solid #317dd2;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin:20px 0px 20px 10px;
+}
+
+.left-container {
+	border-right: 2px solid #317dd2;
+	padding: 0 0 5px 0;
+}
+
+.right-container {
+	border-left: 2px solid #317dd2;
+	padding: 0 0 5px 0;
+}
+
+.name-card {
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size:17px;
+	line-height:25px;
+	text-align:left;
+	color:#317dd2;
+	margin: 10px;
+	display: inline-block;
+	background: rgba(118, 159, 205, .5);
+	padding: 5px 10px 5px 5px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+}
+
+.draggy {
+	vertical-align: inherit;
+	width:9px;
+	margin:2px 10px 0 0;
+}
+
+.slot {
+	height:45px;
+}
+
+.group-label {
+	font-weight:bold;
+	color:#317dd2;
+	font-size: 22px;
+	line-height: 25px;
+}
+
+.find-matches-button {
+	padding:100px 0 0 0;
+}
+
+.match-row {
+	border-bottom: 2px solid #317dd2;
+	height:140px;
+	overflow-x:auto;
+	white-space:nowrap;
+	margin-bottom:10px;
+	padding-bottom:20px;
+}
+
+
+.match-percentage {
+	height:110px;
+	float:left;
+}
+
+.percentage-heading {
+	color:#1a539b;
+	font-size:50px;
+	line-height:80px;
+	font-weight:bold;
+}
+
+.view-match {
+	float:right;
+	padding: 0px 10px;
+	margin-right:10px;
+}
+
+.matched-person {
+	height:100px;
+	float:left;
+	padding:5px 5px 5px 5px;
+	border-right:2px solid rgba(255,255,255,.2);
+}
+
+.potential-match-name {
+	text-align:center;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color:#1a539b;
+	font-size:15px;
+	line-height:17px;
+}
+
+.potential-match-info {
+	text-align:left;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color:#1a539b;
+	font-size:13px;
+}
+
+.potential-match-partial {
+	float:right;
+	height:100px;
+}
+
+.profile-picture {
+	float:left;
+	height:100px;
+	margin-right:5px;
+}
+
+.matches {
+	height:100px;
+	white-space:nowrap;
+	float:left;
+}
+
+.page-title {
+	color:#1a539b;
+	font-size:70px;
+	line-height:90px;
+	font-weight:bold;
+	text-align:center;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+.contact-title {
+	color:#1a539b;
+	font-size:70px;
+	line-height:90px;
+	font-weight:bold;
+}
+
+.about-subtitle {
+	color:#317dd2;
+	font-size:20px;
+	line-height:30px;
+	text-align:left;
+}
+
+.page-subtitle {
+	color:#317dd2;
+	font-size:20px;
+	line-height:30px;
+}
+
+.trip-description {
+	color:#317dd2;
+	font-size:20px;
+	line-height:25px;
+}
+
+.about-info {
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size:18px;
+	text-align:left;
+	color:#1a539b;
+}
+
+.about-container {
+	padding-bottom:10%;
+}
+
+.contact-container {
+	padding-bottom:55%;
+}
+
+.contact-info {
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size:18px;
+	text-align:left;
+	color:#1a539b;
+}
+
+.footer-container {
+	background-color: rgba(198,219,242,0.9);
+background-image: -moz-linear-gradient(top, rgba(198,219,242,0.9), rgba(198,219,242,0.8));
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(198,219,242,0.9)), to(rgba(198,219,242,0.8)));
+background-image: -webkit-linear-gradient(top, rgba(198,219,242,0.9), rgba(198,219,242,0.8));
+background-image: -o-linear-gradient(top, rgba(198,219,242,0.9), rgba(198,219,242,0.8));
+background-image: linear-gradient(to bottom, rgba(198,219,242,0.9), rgba(198,219,242,0.8));
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+-moz-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+	height:7%;
+	min-height:7%;
+}
+
+.footer {
+	padding: 10px 10px 10px 10px;
+	color:#1a539b;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+
+.signup-container {
+	padding-bottom: 20%;
+	color:#317dd2;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+
+.signin-page-container {
+	padding-bottom: 30%;
+	color:#317dd2;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+
+.new-vacation-container {
+	padding-bottom: 22%;
+	color:#317dd2;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+
+.signup-survey-container {
+	padding-bottom: 10%;
+	text-align:left;
+	color:#317dd2;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+
+.trip-survey-container {
+	padding-bottom: 10%;
+	text-align:left;
+	color:#317dd2;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+
+.create-trip-container {
+	padding-bottom: 35%;
+	color:#317dd2;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+
+label {
+	font-weight:bold;
+}
+
+#interests { 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+	width: 30%; 
+}
+ #intersets li { 
+	margin: 0 3px 3px 3px; 
+	padding: 5px 5px 5px 5px; 
+	font-size: 15px; 
+	height: 25px; 
+ }
+#interests li span { 
+	position: absolute; 
+	margin-left: -5px; 
+}
+
+.ui-state-highlight { 
+height: 20px; 
+}
+
+.ui-state-default {
+background:rgba(118, 159, 205, .5);
+}
+

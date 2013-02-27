@@ -1,0 +1,16 @@
+<div class="create-trip-container">
+
+<% provide(:title, 'Create a Trip') %>
+<h1 class="page-title">create a trip</h1>
+
+<%= form_for(@trip) do |f| %>
+ 
+  <%= f.fields_for(:trip_code) do |ef| %> 
+    <%= ef.label :code, 'Please enter your vacation code' %>
+    <%= ef.text_field :code %>
+  <% end %>
+
+  <br><br>
+  <%= f.submit "Create trip", class: "btn btn-standout" %>
+<% end %>
+</div>

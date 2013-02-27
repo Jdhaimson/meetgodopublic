@@ -1,0 +1,37 @@
+<div class="show-user-container">
+
+<% provide(:title, @person.name) %>
+
+<h1 class="page-title">Hello <%= @person.name %>!</h1>
+<%= button_to "create new trip", newtrip_path, class: "btn btn-large btn-standout" %>
+<% if @trips.count > 0 %>
+  <table class="table">
+	  <thead>
+		<tr>
+		  <td class="trip-description"><b>Name</b></td>
+		  <td class="trip-description"><b>Location</b></td>
+		  <td class="trip-description"><b>Start Date</b></td>
+		  <td class="trip-description"><b>End Date</b></td>
+		</tr>
+	  </thead>
+
+    <% @trips.each do |t|%>
+      <tr>
+	  <td class="trip-description"><%= t.vacation.name %></td>
+	  <td class="trip-description"><%= t.vacation.location %></td>
+	  <td class="trip-description"><%= t.vacation.date_start %></td>
+	  <td class="trip-description"><%= t.vacation.date_end %></td>
+	  <!--<td><%= button_to "edit", "#", class: "btn btn-standout" %></td>-->
+	  <td>
+            <%= form_tag( matches_path, method: "get" ) do %>
+              <%= hidden_field_tag( :trip_id, t.id ) %>
+              <%= submit_tag("see matches", class: "btn btn-standout") %>
+            <% end %>
+          </td>
+	 
+	  </tr>
+    <% end %> 
+  </table>
+<% end %>
+
+</div>

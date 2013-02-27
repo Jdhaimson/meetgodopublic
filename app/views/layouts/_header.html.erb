@@ -1,0 +1,54 @@
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span2">
+          </div>
+          <div class="span8 top">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <div class="brand"><%=link_to image_tag("logo.png", height: "75", width: "75", alt: "meet. go. do. logo"), root_path %></div>
+            <div class="nav-collapse">
+              <ul class="nav nav-pills">
+                <% if signed_in? %>
+                  <li <% if current_page?(@current_user) %> class="active"<% end %>><%= link_to "My Trips", @current_user %></li>
+                <% else %>
+                  <li <% if current_page?(root_path) %> class="active"<% end %>><%= link_to "Home", root_path %></li>
+                <% end %>
+                <li <% if current_page?(about_path) %> class="active"<% end %>><%= link_to "About", about_path %></li>
+                <li <% if current_page?(contact_path) %> class="active"<% end %>><%= link_to "Contact", contact_path %></li>
+              </ul>
+              <div class="btn-group btn-signin">
+                <% if signed_in? %>
+	          <button class="btn btn-standout dropdown-toggle" data-toggle="dropdown"><%= @current_user.people.primary.name + " "%> <span class="caret"></span></button>
+                  <ul class="dropdown-menu signin-form">
+                    <li><%= link_to "My Account", "#", method: "get" %></li>
+                    <li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
+                  </ul>
+
+                <% else %>
+                  <button class="btn btn-standout dropdown-toggle" data-toggle="dropdown">Sign In <span class="caret"></span></button>
+                  <ul class="dropdown-menu signin-form">
+                    <%= form_for(:session, url: sessions_path, html: { class: "signin-form" }) do |f| %>
+                      <% # render 'shared/error_messages' %>
+                      <li><%= f.text_field :email, placeholder: "Email" %></li>
+                      <li><%= f.password_field :password, placeholder: "Password" %></li>
+                      <li><%= f.submit "Enter", class: "btn btn-standout" %></li>
+                    <% end %>
+                  </ul>
+                <% end %>
+              </div>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid partial-height">
+    <div class="row-fluid full-height">
+      <div class="span2">
+      </div>
+      <div class="span8 body-background full-height">

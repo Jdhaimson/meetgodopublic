@@ -1,0 +1,42 @@
+<div class="new-vacation-container">
+
+<% provide(:title, 'Create a Vacation') %>
+<h1 class="page-title">create a vacation</h1>
+
+<%= form_for(@vacation) do |f| %>
+
+<script>
+$(function() {
+    $( "#vacation_date_start" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+	  yearRange: "1913:2013",
+	  dateFormat: "yy-mm-dd"
+    });
+	$( "#vacation_date_end" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+	  yearRange: "1913:2013",
+	  dateFormat: "yy-mm-dd"
+    });
+  });
+</script>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :date_start, "Start Date" %>
+  <%= f.text_field :date_start %>
+
+  <%= f.label :date_end, "End Date" %>
+  <%= f.text_field :date_end %>
+
+
+  <br><br>
+  <%= f.submit "Create vacation", class: "btn btn-standout" %>
+<% end %>
+
+</div>
